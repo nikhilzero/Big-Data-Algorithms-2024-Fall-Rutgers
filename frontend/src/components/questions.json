@@ -1,0 +1,64 @@
+{
+    "personalityTestQuestions": [
+      {
+        "question": "How confident are you in your ability to solve challenging problems independently?"
+      },
+      {
+        "question": "How motivating do you find a fast-paced work environment?"
+      },
+      {
+        "question": "How well do you manage your time when you have multiple tasks to complete?"
+      },
+      {
+        "question": "How effectively do you handle stress or tight deadlines?"
+      },
+      {
+        "question": "How comfortable are you with roles that require public speaking or regular interaction with new people?"
+      },
+      {
+        "question": "How rewarding do you find hands-on tasks or creative projects?"
+      },
+      {
+        "question": "How comfortable are you with receiving detailed instructions and feedback?"
+      },
+      {
+        "question": "How motivated are you by recognition in a professional setting?"
+      },
+      {
+        "question": "How easily do you adapt to unexpected changes in your work schedule or plans?"
+      },
+      {
+        "question": "How interested are you in leading a team or taking a leadership role?"
+      },
+      {
+        "question": "How much do you enjoy learning new skills regularly?"
+      },
+      {
+        "question": "How well do you balance individual work and teamwork?"
+      },
+      {
+        "question": "How often do you take charge in group settings?"
+      },
+      {
+        "question": "How important is work-life balance to you?"
+      },
+      {
+        "question": "How comfortable are you with receiving constructive criticism?"
+      },
+      {
+        "question": "How comfortable are you with frequent changes and challenges in your role?"
+      },
+      {
+        "question": "How strongly do you consider yourself analytical or detail-oriented?"
+      },
+      {
+        "question": "How confident are you in your ability to resolve conflicts effectively?"
+      },
+      {
+        "question": "How comfortable are you with taking risks in a professional setting?"
+      },
+      {
+        "question": "How driven are you to achieve career advancement?"
+      }
+    ]
+  }
