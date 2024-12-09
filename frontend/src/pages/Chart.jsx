@@ -1,92 +1,66 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js';
-import '../App.css'
+import '../App.css';
+
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 const ChartPage = () => {
+    const location = useLocation();
+    const finalScores = location.state?.finalScores || new Array(22).fill(0); // Fallback to zeros if data is missing
+
     const data = {
         labels: [
-          'Cheif Executative',
-          'Lead Manager',
-          'General Manager',
-          'Designing',
-          'Coding',
-          'Sales',
-          'Finance'
+            'Management occupations',
+            'Business and financial operations occupations',
+            'Computer and mathematical occupations',
+            'Architecture and engineering occupations',
+            'Life, physical, and social science occupations',
+            'Community and social service occupations',
+            'Legal occupations',
+            'Educational instruction and library occupations',
+            'Arts, design, entertainment, sports, and media occupations',
+            'Healthcare practitioners and technical occupations',
+            'Healthcare support occupations',
+            'Protective service occupations',
+            'Food preparation and serving related occupations',
+            'Building and grounds cleaning and maintenance occupations',
+            'Personal care and service occupations',
+            'Sales and related occupations',
+            'Office and administrative support occupations',
+            'Farming, fishing, and forestry occupations',
+            'Construction and extraction occupations',
+            'Installation, maintenance, and repair occupations',
+            'Production occupations',
+            'Transportation and material moving occupations',
         ],
-        datasets: [{
-          label: 'Food Industry',
-          data: [65, 59, 90, 81, 56, 55, 40],
-          fill: true,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgb(255, 99, 132)',
-          pointBackgroundColor: 'rgb(255, 99, 132)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgb(255, 99, 132)'
-        }, {
-          label: 'Tech Industry',
-          data: [28, 48, 40, 19, 96, 27, 100],
-          fill: true,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgb(54, 162, 235)',
-          pointBackgroundColor: 'rgb(54, 162, 235)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgb(54, 162, 235)'
-        }]
-      };
+        datasets: [
+            {
+                label: 'Final Scores',
+                data: finalScores,
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(255, 99, 132)',
+            },
+        ],
+    };
 
-      const data2 = {
-        labels: [
-          'Cheif Executative',
-          'Lead Manager',
-          'General Manager',
-          'Designing',
-          'Coding',
-          'Sales',
-          'Finance'
-        ],
-        datasets: [{
-          label: 'Labour Industry',
-          data: [65, 59, 90, 81, 56, 55, 40],
-          fill: true,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgb(255, 99, 132)',
-          pointBackgroundColor: 'rgb(255, 99, 132)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgb(255, 99, 132)'
-        }, {
-          label: 'Teaching',
-          data: [28, 48, 40, 19, 96, 27, 100],
-          fill: true,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgb(54, 162, 235)',
-          pointBackgroundColor: 'rgb(54, 162, 235)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgb(54, 162, 235)'
-        }]
-      };
-      const options = {
+    const options = {
         responsive: true,
         maintainAspectRatio: false,
     };
+console.log("chart SCORE =>"+ finalScores);
 
     return (
-        <div className='chartBlock'>
-        <div className="chartContainer" style={{ width: '300px', height: '300px' }}>
-            <Radar className='chart' data={data} options={options}/>
-            <Radar className='chart' data={data2} options={options}/>
-            <Radar className='chart' data={data} options={options}/>
-            <Radar className='chart' data={data2} options={options}/>
-            <Radar className='chart' data={data} options={options}/>
-            <Radar className='chart' data={data2} options={options}/>
-            <Radar className='chart' data={data} options={options}/>
-            <Radar className='chart' data={data2} options={options}/>
-        </div>
+        <div className="chartBlock">
+            <div className="chartContainer" style={{ width: '80vw', height: '80vh' }}>
+                <Radar className="chart" data={data} options={options} />
+            </div>
         </div>
     );
 };
