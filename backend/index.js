@@ -28,13 +28,12 @@ wss.on("connection", (ws) => {
     ws.on("message", (message) => {
         try {
             const data = JSON.parse(message);
-            console.log("Data from Python ==>>"+data.final_scores);
+            console.log("Data from Python ==>>"+JSON.stringify(data, null, 2));
             
-            if (data.final_scores && ws.pendingResponse) {
+            
                 // Send the final_scores as the response to the pending POST request
-                ws.pendingResponse.status(200).send({ final_scores: data.final_scores });
+                ws.pendingResponse.status(200).send(data);
                 ws.pendingResponse = null; // Clear the pending response
-            }
         } catch (error) {
             console.error("Error processing message from client:", error);
         }

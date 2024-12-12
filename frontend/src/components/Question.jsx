@@ -53,13 +53,38 @@ const Question = () => {
         console.error('Failed to send answers to the server');
       } else {
         const responseData = await response.json(); // Parse the JSON response
-        
+        console.log("Data from Node ==>>"+JSON.stringify(responseData, null, 2));
+
+        const edu_categories = responseData.edu_categories
+        const edu_values_2019_scaled = responseData.edu_values_2019_scaled
+        const edu_values_2023_scaled = responseData.edu_values_2023_scaled
+
+        const occ_title = responseData.occ_title;
+        const a_median_2019 = responseData.a_median_2019;
+        const a_median_2023 = responseData.a_median_2023;
+
+        const occupational_groups = responseData.occupational_groups;
+        const skill_data = responseData.skill_data;
+        const skill_column = responseData.skill_column;
         if (responseData.final_scores) {
           const finalScores = responseData.final_scores.map(score => score * 100); // Multiply scores by 100
           console.log('Final scores:', finalScores);
   
           // Pass the data as state during navigation
-          navigate('/chart', { state: { finalScores } });
+        navigate('/chart', { 
+            state: { 
+              finalScores, 
+              edu_categories, 
+              edu_values_2019_scaled, 
+              edu_values_2023_scaled, 
+              occ_title, 
+              a_median_2019, 
+              a_median_2023, 
+              occupational_groups, 
+              skill_data,
+              skill_column 
+            } 
+          });
         } else {
           console.error('final_scores not found in the server response.');
         }

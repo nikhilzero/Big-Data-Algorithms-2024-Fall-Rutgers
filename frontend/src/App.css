@@ -54,20 +54,22 @@ input[type="range"]::-webkit-slider-thumb {
   color: white;
 }
 .chartBlock{
-  width: 80vw;
+  /* width: 80vw; */
   display: grid;
   /* justify-content: center; */
   /* place-items: center; */
-  height: 90vh;
+  /* height: 90vh; */
 
 }
 .chartContainer{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 80px;
   margin: 20px;
+  width: '40vw';
+  height: '40vh';
 }
-.chart{
+.skills,.education,.occupationsData,.skillChartData{
   background: rgba(255, 255, 255, 0.16);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -75,3 +77,37 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-backdrop-filter: blur(7.1px);
   border: 1px solid rgba(255, 255, 255, 0.66);
 }
+
+/* .chartContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20; 
+  padding: 25px;
+} 
+
+.skills {
+  grid-column: 1 / 3; 
+  grid-row: 1 / 2;
+  border: 1px solid #000;
+}
+
+.education {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border: 1px solid #000;
+  width: 50% !important;
+  height: 50% !important;
+}
+
+.occupationsData {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  border: 1px solid #000;
+}
+
+.footer {
+  grid-column: 1 / 3; 
+  grid-row: 3 / 4;
+  border: 1px solid #000;
+}  */
