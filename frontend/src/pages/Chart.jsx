@@ -74,7 +74,7 @@ const ChartPage = () => {
         labels: edu_categories,
         datasets: [
             {
-                label: 'Final Scores',
+                label: 'Jobs 2019',
                 data: edu_values_2019_scaled,
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -85,7 +85,7 @@ const ChartPage = () => {
                 pointHoverBorderColor: 'rgb(255, 99, 132)',
             },
             {
-                label: 'Final Scores',
+                label: 'Jobs 2023',
                 data: edu_values_2023_scaled,
                 fill: true,
                 backgroundColor: 'rgba(8, 0, 225, 0.2)',
