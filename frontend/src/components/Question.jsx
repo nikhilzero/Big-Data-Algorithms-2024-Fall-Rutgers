@@ -125,16 +125,3 @@ const Question = () => {
 };
 
 export default Question;
-
-
-
-
- // {
-      //   "question": "How confident are you in your ability to resolve conflicts effectively?"
-      // },
-      // {
-      //   "question": "How comfortable are you with taking risks in a professional setting?"
-      // },
-      // {
-      //   "question": "How driven are you to achieve career advancement?"
-      // }
